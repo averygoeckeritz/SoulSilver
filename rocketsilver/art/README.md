@@ -28,3 +28,35 @@ size as the originals they replace.
 
 The intro figure is selected in `src/oaks_speech.c` via `OakSpeechPic`, whose
 graphics table is `sBgPicNCGR_NCLR`.
+
+## Why the converter works the way it does
+
+Downscaling with a smoothing filter blends neighbouring colours and invents
+in-between shades. At 64x128 that scattered **908 one-pixel specks** through the
+first attempt at this sprite. The converter instead quantises the artwork to its
+final palette at full resolution and shrinks by majority vote per destination
+cell, which cannot invent a colour and so keeps every boundary crisp.
+
+A sprite also needs a solid dark outline to read against a background. The first
+pass had one on only 30% of its silhouette. The converter now draws it
+explicitly.
+
+## Faces need a hand pass
+
+No downscale can preserve a face that ends up around fourteen pixels wide; eye
+slits and similar details smear into mud. Bodies convert acceptably on their own,
+faces do not. The workflow is:
+
+1. Run the converter.
+2. Print the head as a character map to find its exact geometry.
+3. Place the features deliberately, as `face_fix.py` does here.
+4. Run `polish.py` to absorb leftover specks and drop unused palette slots.
+
+Quality bar for a finished sprite: **no more than one or two specks, a fully
+dark outline, no interior holes, and no wasted palette slots.**
+
+| | First pass | Finished |
+|---|---|---|
+| Isolated specks | 908 | 1 |
+| Outlined silhouette | 30% | 100% |
+| Wasted palette slots | 2 | 0 |
