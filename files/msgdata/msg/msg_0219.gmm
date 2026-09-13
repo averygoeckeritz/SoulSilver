@@ -27,7 +27,7 @@
 	</row>
 	<row id="msg_0219_00006" index="6">
 		<attribute name="window_context_name">used</attribute>
-		<language name="English">Sorry to keep you waiting!\rWelcome to the world of Pokémon!\rMy name is Professor Oak.\rBut everyone calls me the\nPokémon Professor.\rBefore we go any further, I’d like to\ntell you a few things you should\fknow about this world!\r</language>
+		<language name="English">So. You’ve finally woken up.\rWelcome to the world of Pokémon…\rthough I doubt you will find much\nwelcome in it.\rThree years ago, Team Rocket ruled\nthis world from the shadows.\fThen Giovanni vanished, and the\nshadows swallowed us instead.\rMy name does not matter yet.\nCall me the Masked Man.\rBefore we go any further, there are\nthings you must understand about\fthe world you are about to serve.\r</language>
 	</row>
 	<row id="msg_0219_00007" index="7">
 		<attribute name="window_context_name">used</attribute>

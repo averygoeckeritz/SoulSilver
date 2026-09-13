@@ -7,11 +7,14 @@
 #include "field_system.h"
 #include "save_local_field_data.h"
 
+// Rocket Silver: the game opens inside Team Rocket's Mahogany base rather
+// than the player's bedroom. (51, 4) is the B1F entrance tile, taken from
+// the map's own warp record in zone_event 233_D35R0102.
 static const Location sLocation_PlayerRoom = {
-    .mapId = MAP_NEW_BARK_PLAYER_HOUSE_2F,
+    .mapId = MAP_TEAM_ROCKET_HEADQUARTERS_B1F,
     .warpId = 0xFFFFFFFF,
-    .x = 0x00000006,
-    .y = 0x00000006,
+    .x = 51,
+    .y = 4,
     .direction = 0x00000001,
 };
 
