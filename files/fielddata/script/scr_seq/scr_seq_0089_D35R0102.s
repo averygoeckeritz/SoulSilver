@@ -877,6 +877,13 @@ _0D68:
 	GoTo _0C4A
 
 scr_seq_D35R0102_002:
+	PlaySE SEQ_SE_DP_SELECT
+	LockAll
+	FacePlayer
+	NPCMsg msg_0112_D35R0102_00011
+	WaitButton
+	CloseMsg
+	ReleaseAll
 	End
 
 scr_seq_D35R0102_003:

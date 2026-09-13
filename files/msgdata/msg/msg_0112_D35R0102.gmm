@@ -44,4 +44,8 @@
 		<attribute name="window_context_name">used</attribute>
 		<language name="English">The surveillance system is on!</language>
 	</row>
+	<row id="msg_0112_D35R0102_00011" index="11">
+		<attribute name="window_context_name">used</attribute>
+		<language name="English">Awake at last.\rYou are in Team Rocket’s Mahogany\nbase. I brought you here.\fFor three years we have waited in\nthe dark for Giovanni to return.\rHe has not. So we stop waiting.\rWill and Karen are already in\nCherrygrove. You will join them.\fYour target is Professor Elm’s\nlaboratory in New Bark Town.\rDo not disappoint me, {STRVAR_1 3, 0, 0}.</language>
+	</row>
 </body>

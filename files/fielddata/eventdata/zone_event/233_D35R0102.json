@@ -38,10 +38,10 @@
     },
     {
       "id": "obj_D35R0102_rocketm",
-      "spriteId": "SPRITE_ROCKETM",
+      "spriteId": "SPRITE_BRAINS1",
       "movement": 0,
       "type": 0,
-      "eventFlag": "FLAG_UNK_1E8",
+      "eventFlag": "FLAG_NOTHING",
       "scriptId": "_EV_scr_seq_D35R0102_002 + 1",
       "facingDirection": 3,
       "param0": 0,
