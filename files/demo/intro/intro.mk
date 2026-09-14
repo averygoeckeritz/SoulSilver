@@ -67,7 +67,8 @@ INTRO_DEMO_FILES := \
 	intro_00000063.NCLR \
 	intro_00000064.NCGR \
 	intro_00000065.NCER \
-	intro_00000066.NANR
+	intro_00000066.NANR \
+	intro_00000067.NSCR
 
 $(INTRO_DEMO_NARC): $(addprefix $(INTRO_DEMO_DIR)/,$(INTRO_DEMO_FILES))
 	$(NARC) -cf $@ --index-namespace $(INTRO_DEMO_DIR)

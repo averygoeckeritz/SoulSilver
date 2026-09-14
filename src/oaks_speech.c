@@ -1197,9 +1197,13 @@ static void OakSpeech_DrawPicOnBgLayer(OakSpeechData *data, int layer1pic, int l
     ARRAY_ASSIGN(sp10, sBgPicNCGR_NCLR);
 
     if (layer1pic != 0 && layer2pic < 12) { // possible typo?
+        // Rocket Silver: the Masked Man's art is larger than the 8x16 tile area
+        // vanilla used for Oak, so he gets his own wider tilemap. Everyone else
+        // keeps the original, which is why this is a per-picture choice.
+        int scrn = (layer1pic == OAK_SPEECH_PIC_OAK) ? NARC_intro_intro_00000067_NSCR : 9;
         GfGfxLoader_LoadCharData(NARC_demo_intro_intro, sp10[layer1pic][0], data->bgConfig, GF_BG_LYR_MAIN_1, 0, 0, FALSE, data->heapID);
         GfGfxLoader_GXLoadPal(NARC_demo_intro_intro, sp10[layer1pic][1], GF_PAL_LOCATION_MAIN_BG, (enum GFPalSlotOffset)0xE0, 32, data->heapID);
-        GfGfxLoader_LoadScrnData(NARC_demo_intro_intro, 9, data->bgConfig, GF_BG_LYR_MAIN_1, 0, 0, FALSE, data->heapID);
+        GfGfxLoader_LoadScrnData(NARC_demo_intro_intro, scrn, data->bgConfig, GF_BG_LYR_MAIN_1, 0, 0, FALSE, data->heapID);
         OakSpeech_FillBgLayerWithPalette(data, GF_BG_LYR_MAIN_1, 7);
     }
 

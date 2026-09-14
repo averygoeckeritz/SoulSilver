@@ -60,3 +60,25 @@ dark outline, no interior holes, and no wasted palette slots.**
 | Isolated specks | 908 | 1 |
 | Outlined silhouette | 30% | 100% |
 | Wasted palette slots | 2 | 0 |
+
+## Enlarging the intro figure
+
+Vanilla draws the intro character from a tile set plus a tilemap, in an 8x16
+tile area, exactly 64x128. Art larger than that had to be crushed to fit, which
+at 0.70 scale destroyed the Masked Man's eye slits and helmet detail.
+
+The area is data, not code, so it can be made bigger:
+
+- `tools/make_big_intro.py` builds the tile set at the target size.
+- `tools/make_nscr.py` writes a matching tilemap.
+- The new tilemap is registered in `files/demo/intro/intro.mk`.
+- `src/oaks_speech.c` picks it **per picture**, so only the Masked Man uses the
+  wider map. Overwriting the shared one would garble Ethan and Lyra on the
+  character-select screen, since they only have 128 tiles.
+
+The usable height is capped at 144px by the dialogue box, so the art goes in at
+0.96 scale rather than 0.70. That is the difference between legible and mush.
+
+`tools/render_intro.py` composes the screen from the built ROM the way the
+hardware does, which verifies the tile set and tilemap agree without needing an
+emulator. A dangling tile reference shows up immediately as garbage.
